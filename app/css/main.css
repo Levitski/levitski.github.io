@@ -17,7 +17,9 @@ body input:focus, body button:focus, body textarea:focus {
 }
 
 header {
-  background-color: #f5f5f5;
+  background: #f5f5f5 url(../img/hero-image.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+          background-size: cover;
   min-height: 700px;
   height: 100vh;
 }
