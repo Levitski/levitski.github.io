@@ -9,7 +9,7 @@
 
 // Base colors
 $base-black: #706b73
-$base-red: #fa9a87
+$base-red: #ff5c36
 $white: #fff
 $base-text: #626262
 $bg-gray: #f5f5f5
@@ -18,6 +18,9 @@ $bg-gray: #f5f5f5
 body
 	.os-reg
 	color: $base-text
+	input, button, textarea
+		&:focus
+			outline: none
 
 // Header#MAIN
 header
@@ -48,7 +51,36 @@ header
 			float: right
 	&-heading-row
 		text-align: center
-		margin-top: 15%
+		margin-top: 5%
+	&-form-row
+		margin-top: 5%	
+	&-form
+		background-color: $white
+		padding: 35px
+		border-radius: 2px
+		box-shadow: 0px 0px 57px 0px rgba(20, 20, 21, 0.2)
+		p
+			.os-sbold
+			font-size: 20px
+			text-align: center
+			span
+				color: $base-red
+		input, textarea
+			width: 100%
+			border: none
+			border-bottom: 1px solid $base-black
+			margin-top: 30px
+			font-size: 15px
+		button
+			background-color: $base-red
+			border: none
+			padding: 15px 35px
+			border-radius: 50px
+			font-size: 16px
+			color: $white
+			display: block
+			margin: 0 auto
+			margin-top: 20px
 .line
 	width: 30px
 	height: 4px
@@ -82,6 +114,6 @@ h1
 		margin-top: 4%
 		padding: 0 20px
 	span
-		color: darken($base-red, 10%)
+		color: lighten($base-red, 5%)
 
 		
