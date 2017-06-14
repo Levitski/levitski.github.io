@@ -1,9 +1,9 @@
-.os-reg {
+.os-reg, body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
 
-.os-sbold {
+.os-sbold, h2, .main-logo-border p, h1, .process-box h3 {
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
 }
@@ -14,6 +14,27 @@ body {
 
 body input:focus, body button:focus, body textarea:focus {
   outline: none;
+}
+
+h2 {
+  font-size: 50px;
+  text-align: center;
+  line-height: 45px;
+}
+
+h2 span {
+  color: #fc6744;
+}
+
+h2 + p {
+  text-align: center;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 7%;
+}
+
+section {
+  padding: 5% 0;
 }
 
 header {
@@ -155,5 +176,90 @@ h1 + p {
 }
 
 h1 span {
-  color: #ff7150;
+  color: #fc6744;
+}
+
+.process-box {
+  width: 262px;
+  height: 263px;
+  -webkit-box-shadow: 0px 0px 35px 0px rgba(20, 20, 21, 0.21);
+          box-shadow: 0px 0px 35px 0px rgba(20, 20, 21, 0.21);
+  padding: 50px 40px;
+  color: #fff;
+  margin: 0 auto;
+}
+
+.process-box i.fa {
+  font-size: 50px;
+}
+
+.process-box h3 {
+  font-size: 20px;
+  line-height: 42px;
+}
+
+.process-box p {
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.process-box i.fa-camera-retro {
+  -webkit-transform: rotate(-18.453deg);
+      -ms-transform: rotate(-18.453deg);
+          transform: rotate(-18.453deg);
+}
+
+.process-box button {
+  border: none;
+  -webkit-border-radius: 27px;
+          border-radius: 27px;
+  background-color: #fff;
+  -webkit-box-shadow: 3px 5px 14px 0px rgba(20, 20, 21, 0.09);
+          box-shadow: 3px 5px 14px 0px rgba(20, 20, 21, 0.09);
+  padding: 15px;
+  position: absolute;
+  left: 50%;
+  width: 80%;
+  margin-left: -40%;
+  bottom: -27.5px;
+  font-size: 16px;
+  line-height: 25px;
+  color: #000;
+}
+
+.process-box button span {
+  width: 14px;
+  height: 1px;
+  margin-right: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.process-box button span:before {
+  display: inline-block;
+  content: "";
+  width: 14px;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  -webkit-transform: rotate(90deg) translateY(7px);
+      -ms-transform: rotate(90deg) translateY(7px);
+          transform: rotate(90deg) translateY(7px);
+}
+
+.process-box-item-1 {
+  background-color: #4eb2f7;
+}
+
+.process-box-item-2 {
+  background-color: #c049f8;
+}
+
+.process-box-item-3 {
+  background-color: #817eff;
+}
+
+.process-box-item-4 {
+  background-color: #f74770;
 }

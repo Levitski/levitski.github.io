@@ -11,16 +11,32 @@
 $base-black: #706b73
 $base-red: #ff5c36
 $white: #fff
+$black: #000
 $base-text: #626262
 $bg-gray: #f5f5f5
+$base-heddings: #fc6744
 
 // Default
 body
-	.os-reg
+	@extend .os-reg
 	color: $base-text
 	input, button, textarea
 		&:focus
 			outline: none
+h2
+	@extend .os-sbold
+	font-size: 50px
+	text-align: center
+	line-height: 45px
+	span
+		color: $base-heddings
+	+ p
+		text-align: center
+		font-size: 16px
+		line-height: 24px
+		margin-bottom: 7%
+section
+	padding: 5% 0
 
 // Header#MAIN
 header
@@ -38,7 +54,7 @@ header
 		text-align: center
 		line-height: 49px
 		p
-			.os-sbold
+			@extend .os-sbold
 			font-size: 36px
 			color: $base-black
 			span
@@ -107,7 +123,7 @@ header
 		transform: translateY(4px)
 
 h1
-	.os-sbold
+	@extend .os-sbold
 	font-size: 50px
 	+ p
 		line-height: 25px
@@ -115,6 +131,65 @@ h1
 		margin-top: 4%
 		padding: 0 20px
 	span
-		color: lighten($base-red, 5%)
+		color: $base-heddings
+
+// Section#PROCESS
+$process-box-item: #4eb2f7 #c049f8 #817eff #f74770
+.process
+	&-box
+		width: 262px
+		height: 263px
+		box-shadow: 0px 0px 35px 0px rgba(20, 20, 21, 0.21)
+		padding: 50px 40px
+		color: $white
+		margin: 0 auto
+		i.fa
+			font-size: 50px
+		h3
+			@extend .os-sbold
+			font-size: 20px
+			line-height: 42px
+		p
+			font-size: 15px
+			line-height: 22px
+		i.fa-camera-retro
+			transform: rotate(-18.453deg)
+		button
+			border: none
+			border-radius: 27px
+			background-color: $white
+			box-shadow: 3px 5px 14px 0px rgba(20, 20, 21, 0.09)
+			padding: 15px
+			position: absolute
+			left: 50%
+			width: 80%
+			margin-left: -40%
+			bottom: -27.5px
+			font-size: 16px
+			line-height: 25px
+			color: $black
+			span
+				width: 14px
+				height: 1px
+				margin-right: 10px
+				background-color: rgba(#000,.4)
+				display: inline-block
+				vertical-align: middle
+				&:before
+					display: inline-block
+					content:  ""
+					width: 14px
+					height: 1px
+					background-color: rgba(#000,.4)
+					position: absolute
+					transform: rotate(90deg) translateY(7px)
+
+
+@for $i from 1 through 4
+  .process-box-item-#{$i}
+    background-color: nth($process-box-item, $i)
+
+
+
 
 		
