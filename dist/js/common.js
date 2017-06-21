@@ -7,7 +7,17 @@ $(document).ready(function() {
   	arrows: true,
   	prevArrow: '<div class="feedback-arrow feedback-arrow-left"><i class="fa fa-chevron-left"></i></div>',
   	nextArrow: '<div class="feedback-arrow feedback-arrow-right"><i class="fa fa-chevron-right"></i></div>',
-  	dots: true
+  	dots: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }]
 	});
 });
 
