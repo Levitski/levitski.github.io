@@ -2,9 +2,14 @@
 .os-reg
 	font-family: 'Open Sans', sans-serif
 	font-weight: 400
-
 .os-sbold
 	font-family: 'Open Sans', sans-serif
+	font-weight: 600
+.sspro-reg
+	font-family: 'Source Sans Pro', sans-serif
+	font-weight: 400
+.sspro-sbold
+	font-family: 'Source Sans Pro', sans-serif
 	font-weight: 600
 
 // Base colors
@@ -16,6 +21,12 @@ $base-text: #626262
 $bg-gray: #f5f5f5
 $base-heddings: #fc6744
 $section-works: #fbfbfb
+$fa-star: #ffef3b
+$feedback-box-border: #cecece
+$dots: #e0e0e0
+$dots-active: #ff6e47
+$footer-btn: #fdfdfd
+$footer-logo: #d3d3d3
 
 // Default
 body
@@ -42,12 +53,12 @@ section
 // Header#MAIN
 header
 	background: $bg-gray url(../img/hero-image.jpg) no-repeat center center
+	min-height: 768px
 	background-size: cover
-	min-height: 700px
-	height: 100vh
+	position: relative
 .main
 	&-hat-row
-		margin-top: 5%
+		margin-top: 25px
 	&-logo-border
 		border: 3px solid $base-black
 		width: 155px
@@ -69,14 +80,17 @@ header
 			float: right
 	&-heading-row
 		text-align: center
-		margin-top: 5%
-	&-form-row
-		margin-top: 5%	
+		margin-top: 55px	
 	&-form
 		background-color: $white
 		padding: 35px
 		border-radius: 2px
 		box-shadow: 0px 0px 57px 0px rgba(20, 20, 21, 0.2)
+		margin-left: auto
+		margin-right: auto
+		width: 400px
+		position: relative
+		margin-top: 75px
 		p
 			.os-sbold
 			font-size: 20px
@@ -86,6 +100,7 @@ header
 		input, textarea
 			width: 100%
 			border: none
+			border-radius: 0
 			border-bottom: 1px solid $base-black
 			margin-top: 30px
 			font-size: 15px
@@ -136,7 +151,7 @@ h1
 	+ p
 		line-height: 25px
 		font-size: 16px
-		margin-top: 4%
+		margin-top: 20px
 		padding: 0 20px
 	span
 		color: $base-heddings
@@ -151,6 +166,11 @@ $process-box-item: #4eb2f7 #c049f8 #817eff #f74770
 		padding: 50px 40px
 		color: $white
 		margin: 0 auto
+		animation-name: flipInY-custom
+		animation-iteration-count: infinite
+		animation-duration: 5s
+		animation-direction: alternate
+		animation-timing-function: ease //default
 		i.fa
 			font-size: 50px
 		h3
@@ -176,21 +196,21 @@ $process-box-item: #4eb2f7 #c049f8 #817eff #f74770
 			font-size: 16px
 			line-height: 25px
 			color: $black
-			span
+		&-plus
+			width: 14px
+			height: 1px
+			margin-right: 10px
+			background-color: rgba(#000,.4)
+			display: inline-block
+			vertical-align: middle
+			&:before
+				display: inline-block
+				content:  ""
 				width: 14px
 				height: 1px
-				margin-right: 10px
 				background-color: rgba(#000,.4)
-				display: inline-block
-				vertical-align: middle
-				&:before
-					display: inline-block
-					content:  ""
-					width: 14px
-					height: 1px
-					background-color: rgba(#000,.4)
-					position: absolute
-					transform: rotate(90deg) translateY(7px)
+				position: absolute
+				transform: rotate(90deg) translateY(7px)
 
 
 @for $i from 1 through 4
@@ -240,15 +260,278 @@ section#works
 	&-list
 		list-style: none
 		text-align: center
+		padding: 0
 		&-item
 			display: block
 			width: 100px
 			height: 100px
 			margin: 5px auto
-			background-color: darken($section-works, 3%)
+			background-color: darken($section-works, 1%)
+			&:hover
+				box-shadow: 0px 0px 36px 0px rgba(20, 20, 21, 0.2)
+			img
+				margin-top: 25px
+				margin-left: 20px
+			a
+				width: 100px
+				height: 100px
+				display: block
+	&-info
+		button
+			margin-top: 45px
+			border: none
+			border-radius: 27px
+			background-color: $white
+			box-shadow: 3px 5px 14px 0px rgba(20, 20, 21, 0.09)
+			padding: 15px
+			font-size: 16px
+			line-height: 25px
+			color: $black
+			width: 234px
+		h4
+			font-size: 30px
+			line-height: 45.739px
+		&-line
+			width: 57px
+			height: 3px
+			background-color: $base-red
+			display: block
+		p
+			font-size: 16px
+			line-height: 25px
+			margin-top: 15px
+		&-img
+			width: 100%
+			margin-top: 25px
+section#services
+	li.active
+		box-shadow: 0px 0px 36px 0px rgba(20, 20, 21, 0.2)
+	.fade
+		transition: opacity 0.5s linear
+
+// Section#FAQ
+section#faq
+	.panel-default>.panel-heading
+		background-color: lighten($base-red, 7%)
+		color: $white
+	.panel-group a:hover
+		text-decoration: none
+
+// Section#FEEDBACK
+.feedback
+	&-slider
+		@extend .sspro-reg
+		&-item
+			margin: 62px 15px 58px 15px
+			border-radius: 1px
+			box-shadow: 0px 0px 1px 0px rgba(20, 20, 21, 0.75)
+			padding: 0 38px 38px 38px
+			transition: all 1s
+			img
+				width: 120px
+				margin-top: -60px
+				box-shadow: 0px 0px 5px 0px rgba(20, 20, 21, 0.75)
+				transition: all 1s
+			p
+				font-size: 17px
+				line-height: 27px
+				margin-top: 40px
+				margin-bottom: 0
+			.fa-star
+				color: $fa-star
+				font-size: 12px
+				margin-top: 19px
+			h5
+				@extend	.sspro-sbold
+				font-size: 17px
+				line-height: 27px
+				margin-top: 22px
+				margin-bottom: 0
+			span
+				@extend .sspro-reg
+				font-style: italic
+			&:hover
+				box-shadow: 0px 0px 27px 0px rgba(20, 20, 21, 0.09)
+			&:hover img
+				box-shadow: 0px 0px 27px 0px rgba(20, 20, 21, 0.09)
+			&:focus
+				outline: none
+	&-arrow
+		border-radius: 100%
+		height: 50px
+		width: 50px
+		box-shadow: 1px 3px 14px 0px rgba(20, 20, 21, 0.08)
+		border: 1px solid darken($bg-gray, 7%)
+		background-color: $white
+		position: absolute
+		top: 50%
+		margin-top: -25px
+		display: flex
+		justify-content: center
+		align-items: center
+		font-size: 18px
+		z-index: 2
+		cursor: pointer
+		transition: all 0.8s
+		&-left
+			left: -2%
+		&-right
+			right: -2%
+		&:hover
+			background-color: $base-red
+			color: $white
+section#feedback
+	.fa-chevron-left
+  		margin-left: -3px
+	.fa-chevron-right
+		margin-right: -3px
+	ul.slick-dots
+		li button
+			cursor: auto
+		li button:before
+			margin-top: -15px
+			margin-bottom: 0
+			background-color: $dots
+			color: transparent
+			width: 21px
+			height: 7px
+			opacity: 1
+			border-radius: 5px
+			cursor: pointer
+		li.slick-active button:before
+			color: transparent
+			background-color: $dots-active
+
+
+// FOOTER
+footer
+	padding: 2%
+	background-color: $bg-gray
+	button
+		border-radius: 27px
+		border: 1px solid darken($bg-gray, 7%)
+		box-shadow: 5px 10px 20px 0px rgba(20, 20, 21, 0.07)
+		padding: 15px 65px
+		font-size: 16px
+		background-color: $footer-btn
+		animation-timing-function: ease-in
+	a
+		color: $black
+		&:hover, &:focus, &:visited, &:active
+			color: $black
+			text-decoration: none
+.footer
+	&-logo
+		margin-left: 15px
+		display: inline-block
+		width: 55px
+		height: 55px
+		border-radius: 50%
+		background-color: $footer-logo
+		transition: all 0.8s
+		cursor: pointer
+		&:hover
+			background-color: $dots-active
+			box-shadow: 0px 0px 23px 0px rgba(20, 20, 21, 0.29)
+		.fa
+			font-size: 21px
+			line-height: 55px
+			text-align: center
+			display: block
+			color: $white
+		&-row
+			margin-top: 45px
+			p
+				font-size: 17px
+				line-height: 55px
+				height: 55px
+
+// MODALS
+// CSS-POPUP
+.css-popup
+	width: 300px
+	height: 300px
+	background-color: $white
+	position: fixed
+	top: 10%
+	left: 50%
+	margin-left: -150px
+	box-shadow: 5px 10px 20px 0px rgba(20, 20, 21, 0.07)
+	&-overlay
+		display: none
+		opacity: 0
+		position: fixed
+		width: 100%
+		height: 100vh
+		background-color: rgba(darken($bg-gray, 70%),.5)
+		top: 0
+		left: 0
+		z-index: 3
+		&:target
+			display: block
+			opacity: 1
+	&-close
+		font-size: 50px
+		color: $white
+		position: absolute
+		top: -50px
+		right: -30px
+		&:hover, &:focus, &:visited, &:active
+			text-decoration: none
+			color: $white
+		&:hover
+			opacity: .7
+// SVG MODAL WINDOW
+#map
+	width: 100%
+	height: 100vh
+	overflow: hidden
+.cd-modal-content
+	padding: 0
+	margin: 0
+	overflow: hidden
+
+// ANIMATION
+// section#animation
+// 	.box
+// 		width: 100px
+// 		height: 100px
+// 		background-color: red
+// 		animation-name: move
+// 		animation-duration: 2s
+// 		animation-timing-function: ease-in
+// 		animation-delay: 2s
+// 		animation-iteration-count: infinite
+// 		animation-direction: alternate
+
+// @keyframes move
+// 	from
+// 		margin-left: 0
+// 		border-radius: 50px
+// 	50%
+// 		margin-left: 50px
+// 		border-radius: 0	
+// 	to
+// 		margin-left: 150px
+// 		border-radius: 50px
+@keyframes flipInY-custom
+	from
+    	transform: perspective(400px) rotate3d(0, 1, 0, 90deg)
+	40% 
+    	transform: perspective(400px) rotate3d(0, 1, 0, -20deg)
+	60% 
+		transform: perspective(400px) rotate3d(0, 1, 0, 10deg)
+ 	80%
+    	transform: perspective(400px) rotate3d(0, 1, 0, -5deg)
+	to
+    	transform: perspective(400px)
+
+// Адаптив
+@import "responsive"
+ 
+
+		
 			
-
-
 
 
 

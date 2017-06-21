@@ -22,7 +22,13 @@ gulp.task('sass', function() {
 gulp.task('scripts', function() {
 	return gulp.src([
 			'app/libs/jquery/dist/jquery.min.js',
-			'app/libs/bootstrap/dist/js/bootstrap.min.js'
+			'app/libs/bootstrap/dist/js/bootstrap.min.js',
+			// 'app/libs/fotorama/fotorama.js',
+			'app/libs/slick-carousel/slick/slick.min.js',
+			'app/libs/svg-modal-window/js/snap.svg-min.js',
+			'app/libs/svg-modal-window/js/main.js',
+			'app/libs/jquery.nicescroll/dist/jquery.nicescroll.min.js',
+			'app/libs/wow/dist/wow.min.js'
 		])
 		.pipe(concat('libs.min.js'))
 		.pipe(uglify())

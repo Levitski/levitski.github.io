@@ -1,0 +1,116 @@
+// 100vh
+@media (min-width: 1200px)
+	header
+		height: 100vh
+
+// 1200 BreakPoint
+@media (max-width: 1200px)
+	.process
+		&-box
+			width: 210px
+			height: 350px
+	header
+		padding-bottom: 35px
+
+// 1024 iPad
+@media (max-width: 1024px)
+	.process
+		&-box
+			animation-name: none
+			position: relative
+	.main
+		&-form
+			margin-top: 35px
+			&-row
+				button
+					span
+						display: none
+		&-heading-row
+			margin-top: 35px
+
+// 992 BreakPoint
+@media (max-width: 992px)
+	header
+		min-height: 768px
+	.works
+		&-box
+			width: 300px
+			height: 300px
+	.process
+		&-box
+			width: 262px
+			height: 263px
+			margin-bottom: 70px
+	.services
+		&-row
+			div.col-sm-9
+				position: relative
+			div.col-sm-7
+				position: static
+		&-info
+			button
+				position: absolute
+				bottom: 0
+				right: 0
+	.footer
+		&-logo
+			&-row
+				text-align: center
+				div.col-lg-6
+					text-align: center
+
+// 768 BreakPoint
+@media (max-width: 768px)
+	h1
+		font-size: 40px
+		+ p
+			font-size: 14px
+	h2
+		font-size: 40px
+		+ p
+			font-size: 14px
+	.main
+		&-form
+			width: 350px
+			padding: 25px 35px
+			p
+				font-size: 18px
+			button
+				font-size: 14px
+			input, textarea
+				font-size: 14px
+	.services
+		&-list
+			margin-left: 0
+			&-item
+				display: inline-block
+				overflow: hidden
+				width: 80px
+				height: 80px
+			img
+				margin-top: 15px
+				margin-left: 10px
+		&-info
+			margin-left: 15px
+			margin-right: 15px
+			h4
+				text-align: center
+				position: relative
+			&-line
+				display: none
+			&-img
+				width: 290px
+				margin-left: auto
+				margin-right: auto
+				display: block
+			button
+				left: 50%
+				margin-left: -117px
+				bottom: -45px
+	section#faq
+		margin-top: 45px
+
+// 480 BreakPoint
+@media (max-width: 480px)
+	h1, h2
+		font-size: 30px
