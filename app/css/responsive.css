@@ -94,7 +94,6 @@
   }
   .services-list-item {
     display: inline-block;
-    overflow: hidden;
     width: 80px;
     height: 80px;
   }
@@ -132,5 +131,38 @@
 @media (max-width: 480px) {
   h1, h2 {
     font-size: 30px;
+  }
+  .main-form {
+    width: 250px;
+    padding: 25px 15px;
+  }
+  .main-form p {
+    font-size: 14px;
+  }
+  .works-box {
+    width: 200px;
+    height: 200px;
+  }
+  .process-box {
+    width: 230px;
+    height: 230px;
+    padding: 22px 15px;
+  }
+  .services-list-item {
+    height: 55px;
+    width: 55px;
+  }
+  .services-list-item img {
+    -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8);
+    margin-top: 5px;
+    margin-left: -25px;
+  }
+  .services-info-img {
+    width: 220px;
+  }
+  .footer-logo {
+    margin-left: 0;
   }
 }
